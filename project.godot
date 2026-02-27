@@ -12,7 +12,10 @@ config_version=5
 
 config/name="dumb-chess"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+
+[debug]
+
+gdscript/warnings/untyped_declaration=1
 
 [dotnet]
 
