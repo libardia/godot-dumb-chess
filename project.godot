@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="dumb-chess"
+run/main_scene="uid://dr4psr1xll6yx"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
 [debug]

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bcj0xqnhf4atg"]
+
+[ext_resource type="PackedScene" uid="uid://cw3khutt5kuax" path="res://obj/pieces/_piece.tscn" id="1_m8j7x"]
+[ext_resource type="Texture2D" uid="uid://cu5s3vj3bigxv" path="res://assets/img/bq.tres" id="2_8dfio"]
+
+[node name="Piece" unique_id=1258258641 instance=ExtResource("1_m8j7x")]
+
+[node name="Sprite" parent="." index="0" unique_id=1746085288]
+texture = ExtResource("2_8dfio")
