@@ -4,18 +4,6 @@
 [ext_resource type="StyleBox" uid="uid://cgdiiiy72ch4q" path="res://ui/ruler_style_box.tres" id="1_755m8"]
 [ext_resource type="Theme" uid="uid://bjt5v0dg3fquw" path="res://ui/general.tres" id="2_0qu5k"]
 [ext_resource type="PackedScene" uid="uid://dbgyy8ts881a4" path="res://obj/board/square_w.tscn" id="2_755m8"]
-[ext_resource type="PackedScene" uid="uid://bmxk4ij6sl16i" path="res://obj/pieces/piece_bb.tscn" id="5_uhixl"]
-[ext_resource type="PackedScene" uid="uid://dj4n6m1q6j5nv" path="res://obj/pieces/piece_bk.tscn" id="6_gv4w6"]
-[ext_resource type="PackedScene" uid="uid://byi34hy7uc2ia" path="res://obj/pieces/piece_wb.tscn" id="6_vtm0y"]
-[ext_resource type="PackedScene" uid="uid://crdkc6s3nttmm" path="res://obj/pieces/piece_bn.tscn" id="7_n4cxb"]
-[ext_resource type="PackedScene" uid="uid://clt0l22udswph" path="res://obj/pieces/piece_bp.tscn" id="8_6pu1o"]
-[ext_resource type="PackedScene" uid="uid://cxoblltukhwdw" path="res://obj/pieces/piece_wk.tscn" id="8_n4cxb"]
-[ext_resource type="PackedScene" uid="uid://ctmxdjhh73msb" path="res://obj/pieces/piece_bq.tscn" id="9_6pu1o"]
-[ext_resource type="PackedScene" uid="uid://bstgtng2vqt7" path="res://obj/pieces/piece_br.tscn" id="10_ft37j"]
-[ext_resource type="PackedScene" uid="uid://r5g107ajok7b" path="res://obj/pieces/piece_wn.tscn" id="13_uk6sh"]
-[ext_resource type="PackedScene" uid="uid://tnvtvh1iq4t4" path="res://obj/pieces/piece_wp.tscn" id="14_d6jok"]
-[ext_resource type="PackedScene" uid="uid://dx7ya53noxfvs" path="res://obj/pieces/piece_wq.tscn" id="15_lc2dw"]
-[ext_resource type="PackedScene" uid="uid://dyse4yfvs3wlv" path="res://obj/pieces/piece_wr.tscn" id="16_0rmvm"]
 
 [node name="Board" type="AspectRatioContainer" unique_id=1931794292]
 anchors_preset = 15
@@ -124,57 +112,12 @@ layout_mode = 2
 theme_override_constants/separation = 0
 vertical = true
 
-[node name="1" type="Label" parent="GridContainer2/RulerSide/BoxContainer" unique_id=532262360]
+[node name="8" type="Label" parent="GridContainer2/RulerSide/BoxContainer" unique_id=107685967]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 size_flags_vertical = 6
 theme = ExtResource("2_0qu5k")
-text = "1"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="2" type="Label" parent="GridContainer2/RulerSide/BoxContainer" unique_id=1433800917]
-custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
-size_flags_vertical = 6
-theme = ExtResource("2_0qu5k")
-text = "2"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="3" type="Label" parent="GridContainer2/RulerSide/BoxContainer" unique_id=352575733]
-custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
-size_flags_vertical = 6
-theme = ExtResource("2_0qu5k")
-text = "3"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="4" type="Label" parent="GridContainer2/RulerSide/BoxContainer" unique_id=2085476861]
-custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
-size_flags_vertical = 6
-theme = ExtResource("2_0qu5k")
-text = "4"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="5" type="Label" parent="GridContainer2/RulerSide/BoxContainer" unique_id=777937171]
-custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
-size_flags_vertical = 6
-theme = ExtResource("2_0qu5k")
-text = "5"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="6" type="Label" parent="GridContainer2/RulerSide/BoxContainer" unique_id=1134517745]
-custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
-size_flags_vertical = 6
-theme = ExtResource("2_0qu5k")
-text = "6"
+text = "8"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -187,12 +130,57 @@ text = "7"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="8" type="Label" parent="GridContainer2/RulerSide/BoxContainer" unique_id=107685967]
+[node name="6" type="Label" parent="GridContainer2/RulerSide/BoxContainer" unique_id=1134517745]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 size_flags_vertical = 6
 theme = ExtResource("2_0qu5k")
-text = "8"
+text = "6"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="5" type="Label" parent="GridContainer2/RulerSide/BoxContainer" unique_id=777937171]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("2_0qu5k")
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="4" type="Label" parent="GridContainer2/RulerSide/BoxContainer" unique_id=2085476861]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("2_0qu5k")
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="3" type="Label" parent="GridContainer2/RulerSide/BoxContainer" unique_id=352575733]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("2_0qu5k")
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="2" type="Label" parent="GridContainer2/RulerSide/BoxContainer" unique_id=1433800917]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("2_0qu5k")
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="1" type="Label" parent="GridContainer2/RulerSide/BoxContainer" unique_id=532262360]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("2_0qu5k")
+text = "1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -207,145 +195,73 @@ columns = 8
 [node name="A8" parent="GridContainer2/GridContainer" unique_id=1405912661 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
-[node name="PieceBB" parent="GridContainer2/GridContainer/A8" unique_id=1394092176 instance=ExtResource("5_uhixl")]
-layout_mode = 2
-
 [node name="B8" parent="GridContainer2/GridContainer" unique_id=461821020 instance=ExtResource("1_7ytgk")]
-layout_mode = 2
-
-[node name="PieceBB2" parent="GridContainer2/GridContainer/B8" unique_id=791347592 instance=ExtResource("5_uhixl")]
 layout_mode = 2
 
 [node name="C8" parent="GridContainer2/GridContainer" unique_id=789753538 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
-[node name="PieceBK" parent="GridContainer2/GridContainer/C8" unique_id=1254508628 instance=ExtResource("6_gv4w6")]
-layout_mode = 2
-
 [node name="D8" parent="GridContainer2/GridContainer" unique_id=1096168118 instance=ExtResource("1_7ytgk")]
-layout_mode = 2
-
-[node name="PieceBK2" parent="GridContainer2/GridContainer/D8" unique_id=468819632 instance=ExtResource("6_gv4w6")]
 layout_mode = 2
 
 [node name="E8" parent="GridContainer2/GridContainer" unique_id=915619704 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
-[node name="PieceBN" parent="GridContainer2/GridContainer/E8" unique_id=1364864735 instance=ExtResource("7_n4cxb")]
-layout_mode = 2
-
 [node name="F8" parent="GridContainer2/GridContainer" unique_id=900187039 instance=ExtResource("1_7ytgk")]
-layout_mode = 2
-
-[node name="PieceBN2" parent="GridContainer2/GridContainer/F8" unique_id=1643636193 instance=ExtResource("7_n4cxb")]
 layout_mode = 2
 
 [node name="G8" parent="GridContainer2/GridContainer" unique_id=496198636 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
-[node name="PieceBP" parent="GridContainer2/GridContainer/G8" unique_id=326199456 instance=ExtResource("8_6pu1o")]
-layout_mode = 2
-
 [node name="H8" parent="GridContainer2/GridContainer" unique_id=824381389 instance=ExtResource("1_7ytgk")]
-layout_mode = 2
-
-[node name="PieceBP2" parent="GridContainer2/GridContainer/H8" unique_id=1083957636 instance=ExtResource("8_6pu1o")]
 layout_mode = 2
 
 [node name="A7" parent="GridContainer2/GridContainer" unique_id=1838497568 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
-[node name="PieceBQ" parent="GridContainer2/GridContainer/A7" unique_id=785795990 instance=ExtResource("9_6pu1o")]
-layout_mode = 2
-
 [node name="B7" parent="GridContainer2/GridContainer" unique_id=929485436 instance=ExtResource("2_755m8")]
-layout_mode = 2
-
-[node name="PieceBQ2" parent="GridContainer2/GridContainer/B7" unique_id=1301157578 instance=ExtResource("9_6pu1o")]
 layout_mode = 2
 
 [node name="C7" parent="GridContainer2/GridContainer" unique_id=663096739 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
-[node name="PieceBR" parent="GridContainer2/GridContainer/C7" unique_id=1830769851 instance=ExtResource("10_ft37j")]
-layout_mode = 2
-
 [node name="D7" parent="GridContainer2/GridContainer" unique_id=531268853 instance=ExtResource("2_755m8")]
-layout_mode = 2
-
-[node name="PieceBR2" parent="GridContainer2/GridContainer/D7" unique_id=1824127236 instance=ExtResource("10_ft37j")]
 layout_mode = 2
 
 [node name="E7" parent="GridContainer2/GridContainer" unique_id=1569869428 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
-[node name="PieceWB" parent="GridContainer2/GridContainer/E7" unique_id=158823963 instance=ExtResource("6_vtm0y")]
-layout_mode = 2
-
 [node name="F7" parent="GridContainer2/GridContainer" unique_id=70261808 instance=ExtResource("2_755m8")]
-layout_mode = 2
-
-[node name="PieceWB2" parent="GridContainer2/GridContainer/F7" unique_id=630983579 instance=ExtResource("6_vtm0y")]
 layout_mode = 2
 
 [node name="G7" parent="GridContainer2/GridContainer" unique_id=1603269864 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
-[node name="PieceWK" parent="GridContainer2/GridContainer/G7" unique_id=665473906 instance=ExtResource("8_n4cxb")]
-layout_mode = 2
-
 [node name="H7" parent="GridContainer2/GridContainer" unique_id=30677024 instance=ExtResource("2_755m8")]
-layout_mode = 2
-
-[node name="PieceWK2" parent="GridContainer2/GridContainer/H7" unique_id=1009152996 instance=ExtResource("8_n4cxb")]
 layout_mode = 2
 
 [node name="A6" parent="GridContainer2/GridContainer" unique_id=14500898 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
-[node name="PieceWN" parent="GridContainer2/GridContainer/A6" unique_id=631442524 instance=ExtResource("13_uk6sh")]
-layout_mode = 2
-
 [node name="B6" parent="GridContainer2/GridContainer" unique_id=1921270982 instance=ExtResource("1_7ytgk")]
-layout_mode = 2
-
-[node name="PieceWN2" parent="GridContainer2/GridContainer/B6" unique_id=498858844 instance=ExtResource("13_uk6sh")]
 layout_mode = 2
 
 [node name="C6" parent="GridContainer2/GridContainer" unique_id=1197448396 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
-[node name="PieceWP" parent="GridContainer2/GridContainer/C6" unique_id=1862544314 instance=ExtResource("14_d6jok")]
-layout_mode = 2
-
 [node name="D6" parent="GridContainer2/GridContainer" unique_id=1389537030 instance=ExtResource("1_7ytgk")]
-layout_mode = 2
-
-[node name="PieceWP2" parent="GridContainer2/GridContainer/D6" unique_id=1200522590 instance=ExtResource("14_d6jok")]
 layout_mode = 2
 
 [node name="E6" parent="GridContainer2/GridContainer" unique_id=1371506264 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
-[node name="PieceWQ" parent="GridContainer2/GridContainer/E6" unique_id=1541686628 instance=ExtResource("15_lc2dw")]
-layout_mode = 2
-
 [node name="F6" parent="GridContainer2/GridContainer" unique_id=94785672 instance=ExtResource("1_7ytgk")]
-layout_mode = 2
-
-[node name="PieceWQ2" parent="GridContainer2/GridContainer/F6" unique_id=19346124 instance=ExtResource("15_lc2dw")]
 layout_mode = 2
 
 [node name="G6" parent="GridContainer2/GridContainer" unique_id=802837461 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
-[node name="PieceWR" parent="GridContainer2/GridContainer/G6" unique_id=277663885 instance=ExtResource("16_0rmvm")]
-layout_mode = 2
-
 [node name="H6" parent="GridContainer2/GridContainer" unique_id=670998556 instance=ExtResource("1_7ytgk")]
-layout_mode = 2
-
-[node name="PieceWR2" parent="GridContainer2/GridContainer/H6" unique_id=540373941 instance=ExtResource("16_0rmvm")]
 layout_mode = 2
 
 [node name="A5" parent="GridContainer2/GridContainer" unique_id=761727507 instance=ExtResource("1_7ytgk")]
