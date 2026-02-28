@@ -20,7 +20,7 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="17.933333"
-     inkscape:cx="22.472119"
+     inkscape:cx="22.360595"
      inkscape:cy="22.5"
      inkscape:window-width="1920"
      inkscape:window-height="1009"
@@ -31,35 +31,51 @@
   <defs
      id="defs69" />
   <g
-     style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="g7">
     <path
        d="M 22.5,11.63 V 6"
-       style="fill:none;stroke:#000000;stroke-linejoin:miter"
+       style="fill:none;stroke:#ffffff;stroke-linejoin:round;stroke-opacity:1;stroke-width:3;stroke-dasharray:none;stroke-linecap:round"
        id="path1" />
     <path
        d="m 20,8 h 5"
-       style="fill:none;stroke:#000000;stroke-linejoin:miter"
+       style="fill:none;stroke:#ffffff;stroke-linejoin:round;stroke-opacity:1;stroke-width:3;stroke-dasharray:none;stroke-linecap:round"
        id="path2" />
     <path
+       id="path3"
+       style="fill:none;stroke:#ffffff;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;stroke-width:3;stroke-dasharray:none"
+       d="M 22.5 12 C 20.5 12 19.5 14.5 19.5 14.5 C 18.862159 15.775682 19.308558 17.865324 20.033203 19.845703 C 15.720684 15.217502 8.9475103 14.197061 6.5 19.5 C 3.5 25.5 11.5 29.5 11.5 29.5 L 11.5 37 C 17 40.5 27 40.5 32.5 37 L 32.5 30 C 32.5 30 41.5 25.5 38.5 19.5 C 35.435299 14.519861 29.142112 15.116507 25.242188 19.041016 C 25.791729 17.316647 26.051869 15.603738 25.5 14.5 C 25.5 14.5 24.5 12 22.5 12 z " />
+  </g>
+  <g
+     style="display:inline;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="g14">
+    <path
+       d="M 22.5,11.63 V 6"
+       style="fill:none;stroke:#000000;stroke-linejoin:round;stroke-linecap:round"
+       id="path8" />
+    <path
+       d="m 20,8 h 5"
+       style="fill:none;stroke:#000000;stroke-linejoin:round;stroke-linecap:round"
+       id="path9" />
+    <path
        d="m 22.5,25 c 0,0 4.5,-7.5 3,-10.5 0,0 -1,-2.5 -3,-2.5 -2,0 -3,2.5 -3,2.5 -1.5,3 3,10.5 3,10.5"
-       style="fill:#ffffff;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter"
-       id="path3" />
+       style="fill:#ffffff;stroke:#000000;stroke-linecap:round;stroke-linejoin:round"
+       id="path10" />
     <path
        d="m 11.5,37 c 5.5,3.5 15.5,3.5 21,0 v -7 c 0,0 9,-4.5 6,-10.5 -4,-6.5 -13.5,-3.5 -16,4 V 27 23.5 C 19,16 9.5,13 6.5,19.5 c -3,6 5,10 5,10 z"
-       style="fill:#ffffff;stroke:#000000"
-       id="path4" />
+       style="fill:#ffffff;stroke:#000000;stroke-linejoin:round;stroke-linecap:round"
+       id="path11" />
     <path
        d="M 11.5,30 C 17,27 27,27 32.5,30"
-       style="fill:none;stroke:#000000"
-       id="path5" />
+       style="fill:none;stroke:#000000;stroke-linejoin:round;stroke-linecap:round"
+       id="path12" />
     <path
        d="m 11.5,33.5 c 5.5,-3 15.5,-3 21,0"
-       style="fill:none;stroke:#000000"
-       id="path6" />
+       style="fill:none;stroke:#000000;stroke-linejoin:round;stroke-linecap:round"
+       id="path13" />
     <path
        d="M 11.5,37 C 17,34 27,34 32.5,37"
-       style="fill:none;stroke:#000000"
-       id="path7" />
+       style="fill:none;stroke:#000000;stroke-linejoin:round;stroke-linecap:round"
+       id="path14" />
   </g>
 </svg>
