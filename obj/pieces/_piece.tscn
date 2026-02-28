@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://cw3khutt5kuax"]
 
 [node name="Piece" type="TextureRect" unique_id=1394092176]
+custom_minimum_size = Vector2(32, 32)
+offset_right = 32.0
+offset_bottom = 32.0
 expand_mode = 1
 stretch_mode = 5

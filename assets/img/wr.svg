@@ -4,15 +4,32 @@
    width="45"
    height="45"
    id="svg69"
+   sodipodi:docname="wr.svg"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#808080"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="17.933333"
+     inkscape:cx="22.472119"
+     inkscape:cy="22.5"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg69" />
   <defs
      id="defs69" />
-  <!-- white king //-->
-  <!-- white queen //-->
-  <!-- white bishop //-->
-  <!-- white knight //-->
-  <!-- white rook //-->
   <g
      style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="g31">
@@ -43,11 +60,4 @@
        style="fill:none;stroke:#000000;stroke-linejoin:miter"
        id="path31" />
   </g>
-  <!-- white pawn //-->
-  <!-- black king //-->
-  <!-- black queen //-->
-  <!-- black bishop //-->
-  <!-- black knight //-->
-  <!-- black rook //-->
-  <!-- black pawn //-->
 </svg>

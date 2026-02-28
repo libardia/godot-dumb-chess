@@ -3,7 +3,5 @@
 [ext_resource type="PackedScene" uid="uid://cw3khutt5kuax" path="res://obj/pieces/_piece.tscn" id="1_02a7m"]
 [ext_resource type="Texture2D" uid="uid://id6oubly5xib" path="res://assets/img/wn.svg" id="2_02a7m"]
 
-[node name="Piece" unique_id=1394092176 instance=ExtResource("1_02a7m")]
-offset_right = 45.0
-offset_bottom = 45.0
+[node name="PieceWN" unique_id=1394092176 instance=ExtResource("1_02a7m")]
 texture = ExtResource("2_02a7m")

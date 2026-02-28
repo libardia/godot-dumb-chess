@@ -4,81 +4,75 @@
    width="45"
    height="45"
    id="svg69"
+   sodipodi:docname="bq.svg"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#808080"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="17.933333"
+     inkscape:cx="22.472119"
+     inkscape:cy="22.5"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg69" />
   <defs
      id="defs69" />
-  <!-- white king //-->
-  <!-- white queen //-->
-  <!-- white bishop //-->
-  <!-- white knight //-->
-  <!-- white rook //-->
-  <!-- white pawn //-->
-  <!-- black king //-->
-  <!-- black queen //-->
   <g
-     style="opacity:1;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     id="g48">
-    <g
-       style="fill:#000000;stroke:none"
-       id="g42">
-      <circle
-         cx="6"
-         cy="12"
-         r="2.75"
-         id="circle38" />
-      <circle
-         cx="14"
-         cy="9"
-         r="2.75"
-         id="circle39" />
-      <circle
-         cx="22.5"
-         cy="8"
-         r="2.75"
-         id="circle40" />
-      <circle
-         cx="31"
-         cy="9"
-         r="2.75"
-         id="circle41" />
-      <circle
-         cx="39"
-         cy="12"
-         r="2.75"
-         id="circle42" />
-    </g>
+     style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="g16">
     <path
-       d="m 9,26 c 8.5,-1.5 21,-1.5 27,0 L 38.5,13.5 31,25 30.7,10.9 25.5,24.5 22.5,10 19.5,24.5 14.3,10.9 14,25 6.5,13.5 Z"
-       style="stroke:#000000;stroke-linecap:butt"
-       id="path42" />
+       d="m 9,13 a 2,2 0 1 1 -4,0 2,2 0 1 1 4,0 z"
+       transform="translate(-1,-1)"
+       id="path8"
+       style="stroke:#ffffff;fill:#000000" />
+    <path
+       d="m 9,13 a 2,2 0 1 1 -4,0 2,2 0 1 1 4,0 z"
+       transform="translate(15.5,-5.5)"
+       id="path9"
+       style="stroke:#ffffff;fill:#000000" />
+    <path
+       d="m 9,13 a 2,2 0 1 1 -4,0 2,2 0 1 1 4,0 z"
+       transform="translate(32,-1)"
+       id="path10"
+       style="stroke:#ffffff;fill:#000000" />
+    <path
+       d="m 9,13 a 2,2 0 1 1 -4,0 2,2 0 1 1 4,0 z"
+       transform="translate(7,-4.5)"
+       id="path11"
+       style="stroke:#ffffff;fill:#000000" />
+    <path
+       d="m 9,13 a 2,2 0 1 1 -4,0 2,2 0 1 1 4,0 z"
+       transform="translate(24,-4)"
+       id="path12"
+       style="stroke:#ffffff;fill:#000000" />
+    <path
+       d="m 9,26 c 8.5,-1.5 21,-1.5 27,0 L 38,14 31,25 V 11 l -5.5,13.5 -3,-15 -3,15 -5.5,-14 V 25 L 7,14 Z"
+       style="stroke-linecap:butt;stroke:#ffffff;fill:#000000"
+       id="path13" />
     <path
        d="m 9,26 c 0,2 1.5,2 2.5,4 1,1.5 1,1 0.5,3.5 -1.5,1 -1.5,2.5 -1.5,2.5 -1.5,1.5 0.5,2.5 0.5,2.5 6.5,1 16.5,1 23,0 0,0 1.5,-1 0,-2.5 0,0 0.5,-1.5 -1,-2.5 -0.5,-2.5 -0.5,-2 0.5,-3.5 1,-2 2.5,-2 2.5,-4 -8.5,-1.5 -18.5,-1.5 -27,0 z"
-       style="stroke-linecap:butt"
-       id="path43" />
+       style="stroke-linecap:butt;stroke:#ffffff;fill:#000000"
+       id="path14" />
     <path
-       d="m 11,38.5 a 35,35 1 0 0 23,0"
-       style="fill:none;stroke:#000000;stroke-linecap:butt"
-       id="path44" />
-    <path
-       d="m 11,29 a 35,35 1 0 1 23,0"
+       d="M 11.5,30 C 15,29 30,29 33.5,30"
        style="fill:none;stroke:#ffffff"
-       id="path45" />
+       id="path15" />
     <path
-       d="m 12.5,31.5 h 20"
+       d="m 12,33.5 c 6,-1 15,-1 21,0"
        style="fill:none;stroke:#ffffff"
-       id="path46" />
-    <path
-       d="m 11.5,34.5 a 35,35 1 0 0 22,0"
-       style="fill:none;stroke:#ffffff"
-       id="path47" />
-    <path
-       d="m 10.5,37.5 a 35,35 1 0 0 24,0"
-       style="fill:none;stroke:#ffffff"
-       id="path48" />
+       id="path16" />
   </g>
-  <!-- black bishop //-->
-  <!-- black knight //-->
-  <!-- black rook //-->
-  <!-- black pawn //-->
 </svg>
