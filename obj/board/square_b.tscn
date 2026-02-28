@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cd0nvodk3gk3f"]
+
+[ext_resource type="PackedScene" uid="uid://c2is1qixv7opw" path="res://obj/board/square.tscn" id="1_dj7lb"]
+
+[node name="Square" unique_id=461821020 instance=ExtResource("1_dj7lb")]
+
+[node name="ColorRect" parent="." index="0" unique_id=612107739]
+color = Color(0, 0, 0, 1)

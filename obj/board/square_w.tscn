@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dbgyy8ts881a4"]
+
+[ext_resource type="PackedScene" uid="uid://c2is1qixv7opw" path="res://obj/board/square.tscn" id="1_6y3aj"]
+
+[node name="Square" unique_id=461821020 instance=ExtResource("1_6y3aj")]
