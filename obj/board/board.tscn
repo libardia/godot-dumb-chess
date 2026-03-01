@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dbgyy8ts881a4" path="res://obj/board/square_w.tscn" id="2_755m8"]
 
 [node name="Board" type="AspectRatioContainer" unique_id=830852010]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 252.0
