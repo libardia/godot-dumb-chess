@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://c2is1qixv7opw"]
 
-[node name="Square" type="AspectRatioContainer" unique_id=461821020]
+[node name="Square" type="Control" unique_id=1777124892]
 custom_minimum_size = Vector2(32, 32)
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -10,5 +11,12 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=612107739]
-layout_mode = 2
+[node name="ColorRect" type="ColorRect" parent="." unique_id=860156806]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

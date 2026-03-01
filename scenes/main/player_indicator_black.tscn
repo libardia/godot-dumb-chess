@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://65hjy31oeqrk"]
+
+[ext_resource type="Texture2D" uid="uid://ckphpbtbuu1vo" path="res://assets/img/bp.svg" id="1_ovk6f"]
+[ext_resource type="Theme" uid="uid://bjt5v0dg3fquw" path="res://ui/general.tres" id="2_c13d7"]
+
+[node name="PlayerIndicator" type="HBoxContainer" unique_id=462433196]
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=777076056]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("1_ovk6f")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="BlackLabel" type="Label" parent="." unique_id=1469514640]
+layout_mode = 2
+theme = ExtResource("2_c13d7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 40
+text = "Black"
