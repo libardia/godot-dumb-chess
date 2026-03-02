@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://c2is1qixv7opw"]
 
+[ext_resource type="Script" uid="uid://dj1kpy0qcrrh" path="res://obj/board/square.gd" id="1_g50e1"]
+
 [node name="Square" type="MarginContainer" unique_id=436727712]
 custom_minimum_size = Vector2(32, 32)
 anchors_preset = 15
@@ -9,6 +11,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource("1_g50e1")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1439919316]
 layout_mode = 2

@@ -5,3 +5,5 @@
 
 [node name="PieceBP" unique_id=1394092176 instance=ExtResource("1_1tjl6")]
 texture = ExtResource("2_jfo3h")
+color = 1
+type = 5

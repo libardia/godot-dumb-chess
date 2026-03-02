@@ -5,3 +5,4 @@
 
 [node name="PieceWN" unique_id=1394092176 instance=ExtResource("1_02a7m")]
 texture = ExtResource("2_02a7m")
+type = 3

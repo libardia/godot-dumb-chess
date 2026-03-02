@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cd0nvodk3gk3f" path="res://obj/board/square_b.tscn" id="1_7ytgk"]
 [ext_resource type="StyleBox" uid="uid://cgdiiiy72ch4q" path="res://ui/ruler_style_box.tres" id="1_755m8"]
+[ext_resource type="Script" uid="uid://0tjtl2sdg62h" path="res://obj/board/board.gd" id="1_uhixl"]
 [ext_resource type="Theme" uid="uid://bjt5v0dg3fquw" path="res://ui/general.tres" id="2_0qu5k"]
 [ext_resource type="PackedScene" uid="uid://dbgyy8ts881a4" path="res://obj/board/square_w.tscn" id="2_755m8"]
 
@@ -13,6 +14,7 @@ offset_left = 252.0
 offset_right = -252.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_uhixl")
 
 [node name="GridContainer" type="GridContainer" parent="." unique_id=732882170]
 layout_mode = 2
@@ -219,7 +221,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 3
 
-[node name="GridContainer" type="GridContainer" parent="GridContainer/AspectRatioContainer" unique_id=1578550988]
+[node name="BoardSquares" type="GridContainer" parent="GridContainer/AspectRatioContainer" unique_id=1578550988]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -227,194 +230,194 @@ theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 8
 
-[node name="A8" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=1405912661 instance=ExtResource("2_755m8")]
+[node name="A8" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1405912661 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
-[node name="B8" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=461821020 instance=ExtResource("1_7ytgk")]
+[node name="B8" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=461821020 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
-[node name="C8" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=789753538 instance=ExtResource("2_755m8")]
+[node name="C8" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=789753538 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
-[node name="D8" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=1096168118 instance=ExtResource("1_7ytgk")]
+[node name="D8" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1096168118 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
-[node name="E8" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=915619704 instance=ExtResource("2_755m8")]
+[node name="E8" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=915619704 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
-[node name="F8" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=900187039 instance=ExtResource("1_7ytgk")]
+[node name="F8" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=900187039 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
-[node name="G8" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=496198636 instance=ExtResource("2_755m8")]
+[node name="G8" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=496198636 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
-[node name="H8" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=824381389 instance=ExtResource("1_7ytgk")]
+[node name="H8" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=824381389 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
-[node name="A7" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=1838497568 instance=ExtResource("1_7ytgk")]
+[node name="A7" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1838497568 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
-[node name="B7" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=929485436 instance=ExtResource("2_755m8")]
+[node name="B7" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=929485436 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
-[node name="C7" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=663096739 instance=ExtResource("1_7ytgk")]
+[node name="C7" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=663096739 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
-[node name="D7" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=531268853 instance=ExtResource("2_755m8")]
+[node name="D7" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=531268853 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
-[node name="E7" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=1569869428 instance=ExtResource("1_7ytgk")]
+[node name="E7" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1569869428 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
-[node name="F7" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=70261808 instance=ExtResource("2_755m8")]
+[node name="F7" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=70261808 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
-[node name="G7" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=1603269864 instance=ExtResource("1_7ytgk")]
+[node name="G7" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1603269864 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
-[node name="H7" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=30677024 instance=ExtResource("2_755m8")]
+[node name="H7" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=30677024 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
-[node name="A6" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=14500898 instance=ExtResource("2_755m8")]
+[node name="A6" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=14500898 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
-[node name="B6" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=1921270982 instance=ExtResource("1_7ytgk")]
+[node name="B6" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1921270982 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
-[node name="C6" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=1197448396 instance=ExtResource("2_755m8")]
+[node name="C6" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1197448396 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
-[node name="D6" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=1389537030 instance=ExtResource("1_7ytgk")]
+[node name="D6" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1389537030 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
-[node name="E6" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=1371506264 instance=ExtResource("2_755m8")]
+[node name="E6" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1371506264 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
-[node name="F6" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=94785672 instance=ExtResource("1_7ytgk")]
+[node name="F6" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=94785672 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
-[node name="G6" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=802837461 instance=ExtResource("2_755m8")]
+[node name="G6" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=802837461 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
-[node name="H6" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=670998556 instance=ExtResource("1_7ytgk")]
+[node name="H6" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=670998556 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
-[node name="A5" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=761727507 instance=ExtResource("1_7ytgk")]
+[node name="A5" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=761727507 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
-[node name="B5" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=1599017165 instance=ExtResource("2_755m8")]
+[node name="B5" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1599017165 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
-[node name="C5" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=2049224215 instance=ExtResource("1_7ytgk")]
+[node name="C5" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=2049224215 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
-[node name="D5" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=1323046020 instance=ExtResource("2_755m8")]
+[node name="D5" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1323046020 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
-[node name="E5" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=1533873886 instance=ExtResource("1_7ytgk")]
+[node name="E5" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1533873886 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
-[node name="F5" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=968388201 instance=ExtResource("2_755m8")]
+[node name="F5" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=968388201 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
-[node name="G5" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=255050355 instance=ExtResource("1_7ytgk")]
+[node name="G5" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=255050355 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
-[node name="H5" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=1100963045 instance=ExtResource("2_755m8")]
+[node name="H5" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1100963045 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
-[node name="A4" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=76831225 instance=ExtResource("2_755m8")]
+[node name="A4" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=76831225 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
-[node name="B4" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=24262042 instance=ExtResource("1_7ytgk")]
+[node name="B4" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=24262042 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
-[node name="C4" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=57390572 instance=ExtResource("2_755m8")]
+[node name="C4" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=57390572 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
-[node name="D4" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=1165444999 instance=ExtResource("1_7ytgk")]
+[node name="D4" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1165444999 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
-[node name="E4" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=1024264231 instance=ExtResource("2_755m8")]
+[node name="E4" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1024264231 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
-[node name="F4" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=1798222729 instance=ExtResource("1_7ytgk")]
+[node name="F4" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1798222729 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
-[node name="G4" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=852575025 instance=ExtResource("2_755m8")]
+[node name="G4" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=852575025 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
-[node name="H4" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=56060941 instance=ExtResource("1_7ytgk")]
+[node name="H4" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=56060941 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
-[node name="A3" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=1095901360 instance=ExtResource("1_7ytgk")]
+[node name="A3" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1095901360 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
-[node name="B3" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=337288291 instance=ExtResource("2_755m8")]
+[node name="B3" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=337288291 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
-[node name="C3" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=9657199 instance=ExtResource("1_7ytgk")]
+[node name="C3" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=9657199 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
-[node name="D3" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=1000738373 instance=ExtResource("2_755m8")]
+[node name="D3" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1000738373 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
-[node name="E3" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=1980469965 instance=ExtResource("1_7ytgk")]
+[node name="E3" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1980469965 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
-[node name="F3" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=1833897428 instance=ExtResource("2_755m8")]
+[node name="F3" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1833897428 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
-[node name="G3" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=1626439023 instance=ExtResource("1_7ytgk")]
+[node name="G3" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1626439023 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
-[node name="H3" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=337841391 instance=ExtResource("2_755m8")]
+[node name="H3" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=337841391 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
-[node name="A2" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=1295783384 instance=ExtResource("2_755m8")]
+[node name="A2" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1295783384 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
-[node name="B2" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=1717299724 instance=ExtResource("1_7ytgk")]
+[node name="B2" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1717299724 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
-[node name="C2" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=2102800006 instance=ExtResource("2_755m8")]
+[node name="C2" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=2102800006 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
-[node name="D2" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=1298683254 instance=ExtResource("1_7ytgk")]
+[node name="D2" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1298683254 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
-[node name="E2" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=2091295826 instance=ExtResource("2_755m8")]
+[node name="E2" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=2091295826 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
-[node name="F2" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=1066392910 instance=ExtResource("1_7ytgk")]
+[node name="F2" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1066392910 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
-[node name="G2" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=531164312 instance=ExtResource("2_755m8")]
+[node name="G2" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=531164312 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
-[node name="H2" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=1062212829 instance=ExtResource("1_7ytgk")]
+[node name="H2" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1062212829 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
-[node name="A1" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=2131904607 instance=ExtResource("1_7ytgk")]
+[node name="A1" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=2131904607 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
-[node name="B1" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=1289903536 instance=ExtResource("2_755m8")]
+[node name="B1" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1289903536 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
-[node name="C1" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=1662045647 instance=ExtResource("1_7ytgk")]
+[node name="C1" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1662045647 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
-[node name="D1" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=1604318855 instance=ExtResource("2_755m8")]
+[node name="D1" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1604318855 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
-[node name="E1" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=1091397269 instance=ExtResource("1_7ytgk")]
+[node name="E1" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1091397269 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
-[node name="F1" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=666564607 instance=ExtResource("2_755m8")]
+[node name="F1" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=666564607 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
-[node name="G1" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=156646729 instance=ExtResource("1_7ytgk")]
+[node name="G1" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=156646729 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
-[node name="H1" parent="GridContainer/AspectRatioContainer/GridContainer" unique_id=25294275 instance=ExtResource("2_755m8")]
+[node name="H1" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=25294275 instance=ExtResource("2_755m8")]
 layout_mode = 2
