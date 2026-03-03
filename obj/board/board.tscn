@@ -5,6 +5,18 @@
 [ext_resource type="Script" uid="uid://0tjtl2sdg62h" path="res://obj/board/board.gd" id="1_uhixl"]
 [ext_resource type="Theme" uid="uid://bjt5v0dg3fquw" path="res://ui/general.tres" id="2_0qu5k"]
 [ext_resource type="PackedScene" uid="uid://dbgyy8ts881a4" path="res://obj/board/square_w.tscn" id="2_755m8"]
+[ext_resource type="PackedScene" uid="uid://bstgtng2vqt7" path="res://obj/pieces/piece_br.tscn" id="5_gv4w6"]
+[ext_resource type="PackedScene" uid="uid://crdkc6s3nttmm" path="res://obj/pieces/piece_bn.tscn" id="7_0rmvm"]
+[ext_resource type="PackedScene" uid="uid://clt0l22udswph" path="res://obj/pieces/piece_bp.tscn" id="7_n4cxb"]
+[ext_resource type="PackedScene" uid="uid://bmxk4ij6sl16i" path="res://obj/pieces/piece_bb.tscn" id="8_ksuxp"]
+[ext_resource type="PackedScene" uid="uid://ctmxdjhh73msb" path="res://obj/pieces/piece_bq.tscn" id="9_5465x"]
+[ext_resource type="PackedScene" uid="uid://dj4n6m1q6j5nv" path="res://obj/pieces/piece_bk.tscn" id="10_apm2p"]
+[ext_resource type="PackedScene" uid="uid://tnvtvh1iq4t4" path="res://obj/pieces/piece_wp.tscn" id="12_c3cmw"]
+[ext_resource type="PackedScene" uid="uid://dyse4yfvs3wlv" path="res://obj/pieces/piece_wr.tscn" id="13_duoe0"]
+[ext_resource type="PackedScene" uid="uid://r5g107ajok7b" path="res://obj/pieces/piece_wn.tscn" id="14_rr8s6"]
+[ext_resource type="PackedScene" uid="uid://byi34hy7uc2ia" path="res://obj/pieces/piece_wb.tscn" id="15_tkp0g"]
+[ext_resource type="PackedScene" uid="uid://dx7ya53noxfvs" path="res://obj/pieces/piece_wq.tscn" id="16_iuvbo"]
+[ext_resource type="PackedScene" uid="uid://cxoblltukhwdw" path="res://obj/pieces/piece_wk.tscn" id="17_vtarh"]
 
 [node name="Board" type="AspectRatioContainer" unique_id=830852010]
 anchors_preset = 15
@@ -233,49 +245,97 @@ columns = 8
 [node name="A8" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1405912661 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
+[node name="PieceBR" parent="GridContainer/AspectRatioContainer/BoardSquares/A8" unique_id=1394092176 instance=ExtResource("5_gv4w6")]
+layout_mode = 2
+
 [node name="B8" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=461821020 instance=ExtResource("1_7ytgk")]
+layout_mode = 2
+
+[node name="PieceBN" parent="GridContainer/AspectRatioContainer/BoardSquares/B8" unique_id=194929194 instance=ExtResource("7_0rmvm")]
 layout_mode = 2
 
 [node name="C8" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=789753538 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
+[node name="PieceBB" parent="GridContainer/AspectRatioContainer/BoardSquares/C8" unique_id=1265909717 instance=ExtResource("8_ksuxp")]
+layout_mode = 2
+
 [node name="D8" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1096168118 instance=ExtResource("1_7ytgk")]
+layout_mode = 2
+
+[node name="PieceBQ" parent="GridContainer/AspectRatioContainer/BoardSquares/D8" unique_id=1528517462 instance=ExtResource("9_5465x")]
 layout_mode = 2
 
 [node name="E8" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=915619704 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
+[node name="PieceBK" parent="GridContainer/AspectRatioContainer/BoardSquares/E8" unique_id=1725301620 instance=ExtResource("10_apm2p")]
+layout_mode = 2
+
 [node name="F8" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=900187039 instance=ExtResource("1_7ytgk")]
+layout_mode = 2
+
+[node name="PieceBB" parent="GridContainer/AspectRatioContainer/BoardSquares/F8" unique_id=1519058610 instance=ExtResource("8_ksuxp")]
 layout_mode = 2
 
 [node name="G8" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=496198636 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
+[node name="PieceBN" parent="GridContainer/AspectRatioContainer/BoardSquares/G8" unique_id=648676958 instance=ExtResource("7_0rmvm")]
+layout_mode = 2
+
 [node name="H8" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=824381389 instance=ExtResource("1_7ytgk")]
+layout_mode = 2
+
+[node name="PieceBR" parent="GridContainer/AspectRatioContainer/BoardSquares/H8" unique_id=600519717 instance=ExtResource("5_gv4w6")]
 layout_mode = 2
 
 [node name="A7" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1838497568 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
+[node name="PieceBP" parent="GridContainer/AspectRatioContainer/BoardSquares/A7" unique_id=1839156468 instance=ExtResource("7_n4cxb")]
+layout_mode = 2
+
 [node name="B7" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=929485436 instance=ExtResource("2_755m8")]
+layout_mode = 2
+
+[node name="PieceBP" parent="GridContainer/AspectRatioContainer/BoardSquares/B7" unique_id=287834367 instance=ExtResource("7_n4cxb")]
 layout_mode = 2
 
 [node name="C7" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=663096739 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
+[node name="PieceBP" parent="GridContainer/AspectRatioContainer/BoardSquares/C7" unique_id=1164271889 instance=ExtResource("7_n4cxb")]
+layout_mode = 2
+
 [node name="D7" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=531268853 instance=ExtResource("2_755m8")]
+layout_mode = 2
+
+[node name="PieceBP" parent="GridContainer/AspectRatioContainer/BoardSquares/D7" unique_id=1954014434 instance=ExtResource("7_n4cxb")]
 layout_mode = 2
 
 [node name="E7" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1569869428 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
+[node name="PieceBP" parent="GridContainer/AspectRatioContainer/BoardSquares/E7" unique_id=1071834962 instance=ExtResource("7_n4cxb")]
+layout_mode = 2
+
 [node name="F7" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=70261808 instance=ExtResource("2_755m8")]
+layout_mode = 2
+
+[node name="PieceBP" parent="GridContainer/AspectRatioContainer/BoardSquares/F7" unique_id=1083131340 instance=ExtResource("7_n4cxb")]
 layout_mode = 2
 
 [node name="G7" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1603269864 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
+[node name="PieceBP" parent="GridContainer/AspectRatioContainer/BoardSquares/G7" unique_id=830013978 instance=ExtResource("7_n4cxb")]
+layout_mode = 2
+
 [node name="H7" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=30677024 instance=ExtResource("2_755m8")]
+layout_mode = 2
+
+[node name="PieceBP" parent="GridContainer/AspectRatioContainer/BoardSquares/H7" unique_id=1610223297 instance=ExtResource("7_n4cxb")]
 layout_mode = 2
 
 [node name="A6" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=14500898 instance=ExtResource("2_755m8")]
@@ -377,47 +437,95 @@ layout_mode = 2
 [node name="A2" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1295783384 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
+[node name="PieceWP" parent="GridContainer/AspectRatioContainer/BoardSquares/A2" unique_id=756057316 instance=ExtResource("12_c3cmw")]
+layout_mode = 2
+
 [node name="B2" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1717299724 instance=ExtResource("1_7ytgk")]
+layout_mode = 2
+
+[node name="PieceWP" parent="GridContainer/AspectRatioContainer/BoardSquares/B2" unique_id=1373197940 instance=ExtResource("12_c3cmw")]
 layout_mode = 2
 
 [node name="C2" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=2102800006 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
+[node name="PieceWP" parent="GridContainer/AspectRatioContainer/BoardSquares/C2" unique_id=1677017504 instance=ExtResource("12_c3cmw")]
+layout_mode = 2
+
 [node name="D2" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1298683254 instance=ExtResource("1_7ytgk")]
+layout_mode = 2
+
+[node name="PieceWP" parent="GridContainer/AspectRatioContainer/BoardSquares/D2" unique_id=335025038 instance=ExtResource("12_c3cmw")]
 layout_mode = 2
 
 [node name="E2" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=2091295826 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
+[node name="PieceWP" parent="GridContainer/AspectRatioContainer/BoardSquares/E2" unique_id=1161171443 instance=ExtResource("12_c3cmw")]
+layout_mode = 2
+
 [node name="F2" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1066392910 instance=ExtResource("1_7ytgk")]
+layout_mode = 2
+
+[node name="PieceWP" parent="GridContainer/AspectRatioContainer/BoardSquares/F2" unique_id=2042781354 instance=ExtResource("12_c3cmw")]
 layout_mode = 2
 
 [node name="G2" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=531164312 instance=ExtResource("2_755m8")]
 layout_mode = 2
 
+[node name="PieceWP" parent="GridContainer/AspectRatioContainer/BoardSquares/G2" unique_id=537334498 instance=ExtResource("12_c3cmw")]
+layout_mode = 2
+
 [node name="H2" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1062212829 instance=ExtResource("1_7ytgk")]
+layout_mode = 2
+
+[node name="PieceWP" parent="GridContainer/AspectRatioContainer/BoardSquares/H2" unique_id=1543162868 instance=ExtResource("12_c3cmw")]
 layout_mode = 2
 
 [node name="A1" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=2131904607 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
+[node name="PieceWR" parent="GridContainer/AspectRatioContainer/BoardSquares/A1" unique_id=2132892919 instance=ExtResource("13_duoe0")]
+layout_mode = 2
+
 [node name="B1" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1289903536 instance=ExtResource("2_755m8")]
+layout_mode = 2
+
+[node name="PieceWN" parent="GridContainer/AspectRatioContainer/BoardSquares/B1" unique_id=1134829003 instance=ExtResource("14_rr8s6")]
 layout_mode = 2
 
 [node name="C1" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1662045647 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
+[node name="PieceWB" parent="GridContainer/AspectRatioContainer/BoardSquares/C1" unique_id=915443021 instance=ExtResource("15_tkp0g")]
+layout_mode = 2
+
 [node name="D1" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1604318855 instance=ExtResource("2_755m8")]
+layout_mode = 2
+
+[node name="PieceWQ" parent="GridContainer/AspectRatioContainer/BoardSquares/D1" unique_id=1913253309 instance=ExtResource("16_iuvbo")]
 layout_mode = 2
 
 [node name="E1" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=1091397269 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
+[node name="PieceWK" parent="GridContainer/AspectRatioContainer/BoardSquares/E1" unique_id=180736795 instance=ExtResource("17_vtarh")]
+layout_mode = 2
+
 [node name="F1" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=666564607 instance=ExtResource("2_755m8")]
+layout_mode = 2
+
+[node name="PieceWB" parent="GridContainer/AspectRatioContainer/BoardSquares/F1" unique_id=1058432586 instance=ExtResource("15_tkp0g")]
 layout_mode = 2
 
 [node name="G1" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=156646729 instance=ExtResource("1_7ytgk")]
 layout_mode = 2
 
+[node name="PieceWN" parent="GridContainer/AspectRatioContainer/BoardSquares/G1" unique_id=2075560615 instance=ExtResource("14_rr8s6")]
+layout_mode = 2
+
 [node name="H1" parent="GridContainer/AspectRatioContainer/BoardSquares" unique_id=25294275 instance=ExtResource("2_755m8")]
+layout_mode = 2
+
+[node name="PieceWR" parent="GridContainer/AspectRatioContainer/BoardSquares/H1" unique_id=359410060 instance=ExtResource("13_duoe0")]
 layout_mode = 2

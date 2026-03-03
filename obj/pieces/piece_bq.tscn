@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ctmxdjhh73msb"]
 
-[ext_resource type="PackedScene" uid="uid://i315e6bpe0qo" path="res://obj/pieces/_piece.tscn" id="1_kvgh0"]
+[ext_resource type="PackedScene" uid="uid://i315e6bpe0qo" path="res://obj/pieces/piece.tscn" id="1_kvgh0"]
 [ext_resource type="Texture2D" uid="uid://cecbjxp4758fi" path="res://assets/img/bq.svg" id="2_8dfio"]
 
 [node name="PieceBQ" unique_id=1394092176 instance=ExtResource("1_kvgh0")]

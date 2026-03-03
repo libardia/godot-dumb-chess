@@ -2,25 +2,18 @@ class_name Square
 extends Container
 
 
-var held_piece: Piece
+var board: Board
+var piece: Piece
 
 
-func has_piece() -> bool:
-    return is_instance_valid(held_piece)
-
-
-func take_piece() -> Piece:
-    var piece := held_piece
-    remove_child(held_piece)
-    held_piece = null
-    return piece
-
-
-func put_piece(piece: Piece) -> void:
-    add_child(piece)
-    held_piece = piece
-
-
-func create_piece(color: PieceData.Side, type: PieceData.Type) -> void:
-    held_piece = PieceData.ALL_PIECES[color][type].instantiate()
-    add_child(held_piece)
+func _enter_tree() -> void:
+    child_entered_tree.connect(func(child: Node) -> void:
+        if child is Piece:
+            child.square = self
+            piece = child
+    )
+    child_exiting_tree.connect(func(child: Node) -> void:
+        if child is Piece:
+            child.square = null
+            piece = null
+    )

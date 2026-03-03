@@ -12,22 +12,49 @@ enum ChessCoord {
     A2, B2, C2, D2, E2, F2, G2, H2,
     A1, B1, C1, D1, E1, F1, G1, H1,
 }
+enum MoveError {
+    OK,
+    NO_MOVE, CAPTURE_OWN_COLOR
+}
 
 
+var _init_setup: Dictionary[ChessCoord, String]
 var squares: Array[Square]
 
 
 func _ready() -> void:
     squares.assign(%BoardSquares.get_children())
+    for i in squares.size():
+        var c := i as ChessCoord
+        var sq := squares[i]
+        sq.board = self
+        if sq.piece:
+            _init_setup[c] = sq.piece.scene_file_path
+    #resized.connect(func() -> void: squares[0].size)
 
 
-func move_is_legal(from: ChessCoord, to: ChessCoord) -> bool:
-    return squares[from].has_piece() and not squares[to].has_piece()
+func reset_board() -> void:
+    for sq in squares:
+        if sq.piece: sq.piece.free()
+    for c: ChessCoord in _init_setup.keys():
+        squares[c].add_child(load(_init_setup[c]).instantiate())
 
 
 func move(from: ChessCoord, to: ChessCoord) -> void:
+    if move_is_legal(from, to):
+        var sqf := squares[from]
+        var sqt := squares[to]
+        if sqt.piece:
+            sqt.piece.free()
+        sqf.piece.reparent(sqt, false)
+
+
+func move_is_legal(from: ChessCoord, to: ChessCoord) -> MoveError:
     var sqf := squares[from]
+    var pf := sqf.piece
     var sqt := squares[to]
-    if sqt.has_piece():
-        sqt.take_piece().queue_free()
-    sqt.put_piece(sqf.take_piece())
+    var pt := sqt.piece
+    if not pf: return MoveError.NO_MOVE
+    if pt and pt.color == pf.color: return MoveError.CAPTURE_OWN_COLOR
+    #TODO: SO MANY MORE CHECKS
+    return MoveError.OK
