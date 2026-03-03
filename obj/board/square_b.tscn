@@ -4,5 +4,5 @@
 
 [node name="SquareB" unique_id=461821020 instance=ExtResource("1_dj7lb")]
 
-[node name="ColorRect" parent="." index="0" unique_id=1439919316]
+[node name="ColorRect" parent="." index="0" unique_id=1320344144]
 color = Color(0, 0, 0, 1)

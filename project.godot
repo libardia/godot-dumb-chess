@@ -17,6 +17,7 @@ diagnostic_list/auto_refresh=true
 config/name="dumb-chess"
 run/main_scene="uid://dr4psr1xll6yx"
 config/features=PackedStringArray("4.6", "Forward Plus")
+config/icon="uid://cxorx7hmqoe1y"
 
 [autoload]
 
@@ -44,9 +45,9 @@ enabled=PackedStringArray("res://addons/commons/plugin.cfg", "res://addons/diagn
 
 [input]
 
-left_click={
+mouse_left={
 "deadzone": 0.2,
-"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(167, 2),"global_position":Vector2(176, 50),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(294, 14),"global_position":Vector2(303, 62),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
 

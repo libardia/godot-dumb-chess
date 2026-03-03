@@ -2,6 +2,21 @@
 
 [ext_resource type="Script" uid="uid://dj1kpy0qcrrh" path="res://obj/board/square.gd" id="1_g50e1"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g50e1"]
+bg_color = Color(0.5019608, 0.5019608, 0.5019608, 0.5019608)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.33333334, 0.33333334, 0.33333334, 1)
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yey04"]
+bg_color = Color(1, 1, 0, 0.5019608)
+
 [node name="Square" type="MarginContainer" unique_id=436727712]
 custom_minimum_size = Vector2(32, 32)
 anchors_preset = 15
@@ -13,7 +28,24 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_g50e1")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1439919316]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1320344144]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_filter = 1
+
+[node name="HighlightHover" type="Panel" parent="." unique_id=310122573]
+unique_name_in_owner = true
+visible = false
+z_index = 2
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g50e1")
+
+[node name="HighlightPressed" type="Panel" parent="." unique_id=1983702038]
+unique_name_in_owner = true
+visible = false
+z_index = 1
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yey04")
