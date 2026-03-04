@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dr4psr1xll6yx"]
 
+[ext_resource type="PackedScene" uid="uid://b6djhgmph6lda" path="res://scenes/main/cursor_follow.tscn" id="1_6q06x"]
 [ext_resource type="PackedScene" uid="uid://65hjy31oeqrk" path="res://scenes/main/player_indicator_black.tscn" id="1_l3cfh"]
 [ext_resource type="PackedScene" uid="uid://c27y5pk1sjr1p" path="res://obj/board/board.tscn" id="2_6q06x"]
 [ext_resource type="PackedScene" uid="uid://bj2odlx6jk2op" path="res://scenes/main/player_indicator_white.tscn" id="3_k2fmo"]
@@ -12,6 +13,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="CursorFollow" parent="." unique_id=1412999318 instance=ExtResource("1_6q06x")]
+layout_mode = 0
 
 [node name="BoxContainer" type="HBoxContainer" parent="." unique_id=1043255135]
 layout_mode = 1

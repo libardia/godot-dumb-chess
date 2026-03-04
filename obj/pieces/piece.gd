@@ -2,7 +2,11 @@ class_name Piece
 extends TextureRect
 
 
-@export var color: PieceData.Side
-@export var type: PieceData.Type
+enum ChessColor { WHITE, BLACK }
+enum Type { KING,  QUEEN, BISHOP, KNIGHT, ROOK, PAWN }
 
-var square: Square
+
+@export var color: ChessColor
+@export var type: Type
+
+var board_position: Board.Coord

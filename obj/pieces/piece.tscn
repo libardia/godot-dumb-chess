@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://n2140n25srxt" path="res://obj/pieces/piece.gd" id="1_evm6l"]
 
 [node name="Piece" type="TextureRect" unique_id=1394092176]
+z_index = 3
 custom_minimum_size = Vector2(32, 32)
 offset_right = 32.0
 offset_bottom = 32.0
