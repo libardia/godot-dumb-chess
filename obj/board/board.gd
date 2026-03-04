@@ -51,6 +51,12 @@ func move(from: Coord, to: Coord) -> void:
         sqf.held.reparent(sqt, false)
 
 
+func square_at(rank: int, file: int) -> Square:
+    var x := file - 1
+    var y := 8 - rank
+    return squares[8*y+x]
+
+
 func move_is_legal(from: Coord, to: Coord) -> bool:
     var sqf := squares[from]
     var pf := sqf.held
@@ -60,9 +66,3 @@ func move_is_legal(from: Coord, to: Coord) -> bool:
     if pt and pt.color == pf.color: return false # can't capture own color
     #TODO: SO MANY MORE CHECKS
     return true
-
-
-func square_at(rank: int, file: int) -> Square:
-    var x := file - 1
-    var y := 8 - rank
-    return squares[8*y+x]
