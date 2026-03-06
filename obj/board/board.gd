@@ -13,6 +13,24 @@ enum Coord {
     A1, B1, C1, D1, E1, F1, G1, H1,
 }
 
+class VectorRF:
+    var r: int
+    var f: int
+
+    func to_coord() -> Coord:
+        var x := f - 1
+        var y := 8 - r
+        return (8 * y + x) as Coord
+
+    static func from_coord(coord: Coord) -> VectorRF:
+        var x := coord % 8
+        @warning_ignore("integer_division")
+        var y := coord / 8
+        var rf := VectorRF.new()
+        rf.r = 8 - y
+        rf.f = x + 1
+        return rf
+
 
 var _init_setup: Dictionary[Coord, String]
 var squares: Array[Square]
@@ -47,7 +65,7 @@ func reset_board() -> void:
 
 
 func move(from: Coord, to: Coord) -> void:
-    if move_is_legal(from, to):
+    if MoveLawyer.move_is_legal(from, to):
         var sqf := squares[from]
         var sqt := squares[to]
         if sqt.held:
@@ -55,18 +73,9 @@ func move(from: Coord, to: Coord) -> void:
         sqf.held.reparent(sqt, false)
 
 
-func square_at(rank: int, file: int) -> Square:
-    var x := file - 1
-    var y := 8 - rank
-    return squares[8*y+x]
+func square_at_rf(rf: VectorRF) -> Square:
+    return squares[rf.to_coord()]
 
 
-func move_is_legal(from: Coord, to: Coord) -> bool:
-    var sqf := squares[from]
-    var pf := sqf.held
-    var sqt := squares[to]
-    var pt := sqt.held
-    if not pf: return false # no piece to move
-    if pt and pt.color == pf.color: return false # can't capture own color
-    #TODO: SO MANY MORE CHECKS
-    return true
+func square_at_coord(coord: Coord) -> Square:
+    return squares[coord]
