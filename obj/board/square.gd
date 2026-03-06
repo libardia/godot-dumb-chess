@@ -36,18 +36,18 @@ func _on_gui_input(event: InputEvent) -> void:
         _pressed = event.is_pressed()
         highlight_pressed.visible = _pressed
         _on_hover_change(_hovered)
-        var cf := BoardData.cursor_follow
+        var ci := GameData.cursor_indicator
         if _pressed:
-            if not cf.held and held:
-                cf.pick_up(held)
-        elif cf.held:
-            var hsq := BoardData.hovered_square
+            if not ci.held and held:
+                ci.pick_up(held)
+        elif ci.held:
+            var hsq := GameData.hovered_square
             if hsq:
-                board.move(cf.original_coord, hsq.coord)
-            cf.drop()
+                board.move(ci.original_coord, hsq.coord)
+            ci.drop()
 
 
 func _on_hover_change(hovered: bool) -> void:
     _hovered = hovered
-    if hovered: BoardData.hovered_square = self
+    if hovered: GameData.hovered_square = self
     highlight_hover.visible = not _pressed and _hovered
