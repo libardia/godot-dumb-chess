@@ -13,24 +13,6 @@ enum Coord {
     A1, B1, C1, D1, E1, F1, G1, H1,
 }
 
-class VectorRF:
-    var r: int
-    var f: int
-
-    func to_coord() -> Coord:
-        var x := f - 1
-        var y := 8 - r
-        return (8 * y + x) as Coord
-
-    static func from_coord(coord: Coord) -> VectorRF:
-        var x := coord % 8
-        @warning_ignore("integer_division")
-        var y := coord / 8
-        var rf := VectorRF.new()
-        rf.r = 8 - y
-        rf.f = x + 1
-        return rf
-
 
 var _init_setup: Dictionary[Coord, String]
 var squares: Array[Square]
@@ -70,12 +52,32 @@ func move(from: Coord, to: Coord) -> void:
         var sqt := squares[to]
         if sqt.held:
             sqt.held.free()
+        sqf.held.ever_moved = true
         sqf.held.reparent(sqt, false)
 
 
-func square_at_rf(rf: VectorRF) -> Square:
-    return squares[rf.to_coord()]
+func square_at_rf(rf: Vector2i) -> Square:
+    return squares[Board.rf_to_coord(rf)]
 
 
 func square_at_coord(coord: Coord) -> Square:
     return squares[coord]
+
+
+static func coord_to_rf(coord: Coord) -> Vector2i:
+    @warning_ignore("integer_division")
+    return Vector2i(
+        (coord % 8) + 1,
+        8 - (coord / 8),
+    )
+
+
+static func rf_to_coord(rf: Vector2i) -> Coord:
+    return (8 * (rf.y - 8) + (rf.x - 1)) as Coord
+
+
+static func rf_inside_board(rf: Vector2i) -> bool:
+    return (
+        1 <= rf.x and rf.x <= 8 and
+        1 <= rf.y and rf.y <= 8
+    )

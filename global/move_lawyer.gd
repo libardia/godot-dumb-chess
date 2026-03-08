@@ -16,3 +16,77 @@ func move_is_legal(from: Board.Coord, to: Board.Coord) -> bool:
     if fp.color == tp.color: return false
 
     return true
+
+
+func reachable_squares(piece: Piece) -> Array[Square]:
+    var b := GameData.board
+    var coords: Array[Vector2i]
+    match piece.type:
+        Piece.Type.KING:
+            pass
+        Piece.Type.QUEEN:
+            pass
+        Piece.Type.BISHOP:
+            coords = _bishop_reachable_coords(piece)
+        Piece.Type.KNIGHT:
+            pass
+        Piece.Type.ROOK:
+            coords = _rook_reachable_coords(piece)
+        Piece.Type.PAWN:
+            coords = _pawn_reachable_coords(piece)
+    var squares: Array[Square]
+    for c in coords:
+        if Board.rf_inside_board(c):
+            squares.append(b.square_at_rf(c))
+    return squares
+
+
+func _queen_reachable_coords(piece: Piece) -> Array[Vector2i]:
+    var coords := _bishop_reachable_coords(piece)
+    coords.append_array(_rook_reachable_coords(piece))
+    return coords
+
+
+func _bishop_reachable_coords(piece: Piece) -> Array[Vector2i]:
+    var coords: Array[Vector2i]
+    var rf := Board.coord_to_rf(piece.board_position)
+    for i in 7:
+        coords.append_array([
+            Vector2i(rf.x + i, rf.y + i),
+            Vector2i(rf.x + i, rf.y - i),
+            Vector2i(rf.x - i, rf.y + i),
+            Vector2i(rf.x - i, rf.y - i),
+        ])
+    return coords
+
+
+func _rook_reachable_coords(piece: Piece) -> Array[Vector2i]:
+    var coords: Array[Vector2i]
+    var rf := Board.coord_to_rf(piece.board_position)
+    for i in 7:
+        coords.append_array([
+            Vector2i(rf.x + i, rf.y),
+            Vector2i(rf.x - i, rf.y),
+            Vector2i(rf.x, rf.y + i),
+            Vector2i(rf.x, rf.y - i),
+        ])
+    return coords
+
+
+func _pawn_reachable_coords(piece: Piece) -> Array[Vector2i]:
+    var rf := Board.coord_to_rf(piece.board_position)
+    var c := piece.color
+    var coords: Array[Vector2i]
+
+    var color_dir := 1 if c == Piece.ChessColor.WHITE else -1
+    var next_rank := rf.y + color_dir
+    coords = [
+        Vector2i(rf.x + 1, next_rank), # capture to the right
+        Vector2i(rf.x, next_rank), # move forward
+        Vector2i(rf.x - 1, next_rank), # capture to the left
+    ]
+    if not piece.ever_moved:
+        coords.append(
+            Vector2i(rf.x, next_rank + color_dir) # move two forward
+        )
+    return coords
