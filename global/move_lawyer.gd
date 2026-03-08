@@ -23,13 +23,13 @@ func reachable_squares(piece: Piece) -> Array[Square]:
     var coords: Array[Vector2i]
     match piece.type:
         Piece.Type.KING:
-            pass
+            coords = _king_reachable_coords(piece)
         Piece.Type.QUEEN:
-            pass
+            coords = _queen_reachable_coords(piece)
         Piece.Type.BISHOP:
             coords = _bishop_reachable_coords(piece)
         Piece.Type.KNIGHT:
-            pass
+            coords = _knight_reachable_coords(piece)
         Piece.Type.ROOK:
             coords = _rook_reachable_coords(piece)
         Piece.Type.PAWN:
@@ -39,6 +39,16 @@ func reachable_squares(piece: Piece) -> Array[Square]:
         if Board.rf_inside_board(c):
             squares.append(b.square_at_rf(c))
     return squares
+
+
+func _king_reachable_coords(piece: Piece) -> Array[Vector2i]:
+    var coords: Array[Vector2i]
+    for dx: int in [-1, 0, 1]:
+        for dy: int in [-1, 0, 1]:
+            if dx != 0 and dy != 0:
+                var d := Vector2i(dx, dy)
+                coords.append(Board.coord_to_rf(piece.board_position) + d)
+    return coords
 
 
 func _queen_reachable_coords(piece: Piece) -> Array[Vector2i]:
@@ -57,6 +67,16 @@ func _bishop_reachable_coords(piece: Piece) -> Array[Vector2i]:
             Vector2i(rf.x - i, rf.y + i),
             Vector2i(rf.x - i, rf.y - i),
         ])
+    return coords
+
+
+func _knight_reachable_coords(piece: Piece) -> Array[Vector2i]:
+    var coords: Array[Vector2i]
+    for dx: int in [-2, -1, 1, 2]:
+        var k := 3 - absi(dx)
+        for dy: int in [k, -k]:
+            var d := Vector2i(dx, dy)
+            coords.append(Board.coord_to_rf(piece.board_position) + d)
     return coords
 
 
