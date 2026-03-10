@@ -19,14 +19,14 @@ var squares: Array[Square]
 
 
 func _enter_tree() -> void:
-    GameData.board = self
+    Globals.board = self
 
 
 func _ready() -> void:
     var board_squares: GridContainer = %BoardSquares
     squares.assign(board_squares.get_children())
     board_squares.mouse_exited.connect(func() -> void:
-        GameData.hovered_square = null
+        Globals.hovered_square = null
     )
     for i in squares.size():
         var c := i as Coord
@@ -35,7 +35,7 @@ func _ready() -> void:
         if sq.held:
             _init_setup[c] = sq.held.scene_file_path
     squares[0].resized.connect(func() -> void:
-        GameData.square_size = squares[0].size
+        Globals.square_size = squares[0].size
     )
 
 

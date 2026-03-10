@@ -2,7 +2,7 @@ extends Node
 
 
 func move_is_legal(from: Board.Coord, to: Board.Coord) -> bool:
-    var b := GameData.board
+    var b := Globals.board
     var fsq := b.square_at_coord(from)
     var fp := fsq.held
     var tsq := b.square_at_coord(to)
@@ -11,7 +11,7 @@ func move_is_legal(from: Board.Coord, to: Board.Coord) -> bool:
     # no piece to move
     if not fp: return false
     # not that color's turn
-    if fp.color != GameData.current_turn: return false
+    if fp.color != Globals.current_turn: return false
     # can't capture own color
     if fp.color == tp.color: return false
 
@@ -19,7 +19,7 @@ func move_is_legal(from: Board.Coord, to: Board.Coord) -> bool:
 
 
 func reachable_squares(piece: Piece) -> Array[Square]:
-    var b := GameData.board
+    var b := Globals.board
     var coords: Array[Vector2i]
     match piece.type:
         Piece.Type.KING:

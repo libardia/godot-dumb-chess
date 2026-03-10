@@ -9,9 +9,9 @@ var original_coord: Board.Coord
 
 
 func _enter_tree() -> void:
-    GameData.cursor_indicator = self
-    GameData.square_size_changed.connect(func() -> void:
-        size = GameData.square_size
+    Globals.cursor_indicator = self
+    Globals.square_size_changed.connect(func() -> void:
+        size = Globals.square_size
     )
     child_entered_tree.connect(func(child: Node) -> void:
         if child is Piece:
