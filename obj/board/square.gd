@@ -38,15 +38,13 @@ func _on_gui_input(event: InputEvent) -> void:
         _pressed = event.is_pressed()
         highlight_pressed.visible = _pressed
         _on_hover_change(_hovered)
-        var ci := Globals.cursor_indicator
+        var pdp := Globals.piece_drag_proxy
         if _pressed:
-            if not ci.held and held:
-                ci.pick_up(held)
-        elif ci.held:
+            if not pdp.held and held:
+                pdp.pick_up(held)
+        elif pdp.held:
             var hsq := Globals.hovered_square
-            if hsq:
-                board.move(ci.original_coord, hsq.coord)
-            ci.drop()
+            pdp.drop(hsq.coord if hsq else pdp.original_coord)
 
 
 func _on_hover_change(hovered: bool) -> void:

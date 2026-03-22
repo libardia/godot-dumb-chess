@@ -6,7 +6,7 @@ const D_U := Vector2i(1, 0)
 const D_D := Vector2i(-1, 0)
 const D_L := Vector2i(0, -1)
 const D_R := Vector2i(0, 1)
-const D_UL := Vector2i(-1, 1)
+const D_UL := Vector2i(1, -1)
 const D_UR := Vector2i(1, 1)
 const D_DL := Vector2i(-1, -1)
 const D_DR := Vector2i(-1, 1)
@@ -71,14 +71,16 @@ func reachable_coords(piece: Piece) -> Array[Board.Coord]:
             coords = _rook_reachable_coords(board, piece)
         Piece.Type.PAWN:
             coords = _pawn_reachable_coords(board, piece)
-    return coords.map(Board.rf_to_coord)
+    var reachable: Array[Board.Coord]
+    reachable.assign(coords.map(Board.rf_to_coord))
+    return reachable
 
 
 func _king_reachable_coords(board: Board, piece: Piece) -> Array[Vector2i]:
     var coords: Array[Vector2i]
     for dir in D_ALL:
         var npos := Board.coord_to_rf(piece.board_position) + dir
-        if _can_move_or_capture(board, piece, npos):
+        if _move_result(board, piece, npos) != MoveResult.NO_MOVE:
             coords.append(npos)
     return coords
 
@@ -95,10 +97,15 @@ func _bishop_reachable_coords(board: Board, piece: Piece) -> Array[Vector2i]:
     for dir: Vector2i in [D_UL, D_UR, D_DL, D_DR]:
         for i in range(1, 8):
             var npos := ppos + dir * i
-            if _can_move_or_capture(board, piece, npos):
-                coords.append(npos)
-            else:
+            var result := _move_result(board, piece, npos)
+            if result == MoveResult.NO_MOVE:
+                # Don't consider any farther in this direction
                 break
+            else:
+                coords.append(npos)
+                if result == MoveResult.CAPTURE:
+                    # Don't consider any farther in this direction
+                    break
     return coords
 
 
@@ -106,7 +113,7 @@ func _knight_reachable_coords(board: Board, piece: Piece) -> Array[Vector2i]:
     var coords: Array[Vector2i]
     for off in K_OFF:
         var npos := Board.coord_to_rf(piece.board_position) + off
-        if _can_move_or_capture(board, piece, npos):
+        if _move_result(board, piece, npos):
             coords.append(npos)
     return coords
 
@@ -116,8 +123,15 @@ func _rook_reachable_coords(board: Board, piece: Piece) -> Array[Vector2i]:
     for dir: Vector2i in [D_U, D_D, D_L, D_R]:
         for i in range(1, 8):
             var npos := Board.coord_to_rf(piece.board_position) + dir * i
-            if _can_move_or_capture(board, piece, npos):
+            var result := _move_result(board, piece, npos)
+            if result == MoveResult.NO_MOVE:
+                # Don't consider any farther in this direction
+                break
+            else:
                 coords.append(npos)
+                if result == MoveResult.CAPTURE:
+                    # Don't consider any farther in this direction
+                    break
     return coords
 
 
@@ -157,11 +171,10 @@ func _pawn_reachable_coords(board: Board, piece: Piece) -> Array[Vector2i]:
     return coords
 
 
-func _can_move_or_capture(board: Board, piece: Piece, rf: Vector2i) -> bool:
+enum MoveResult {NO_MOVE, MOVE, CAPTURE}
+func _move_result(board: Board, piece: Piece, rf: Vector2i) -> MoveResult:
     if Board.rf_inside_board(rf):
         var other_piece := board.piece_at_rf(rf)
-        return (
-            not other_piece or
-            other_piece.color != piece.color
-        )
-    return false
+        if not other_piece: return MoveResult.MOVE
+        if other_piece.color != piece.color: return MoveResult.CAPTURE
+    return MoveResult.NO_MOVE

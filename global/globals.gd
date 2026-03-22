@@ -10,6 +10,6 @@ var square_size: Vector2:
         square_size_changed.emit()
 
 var board: Board
-var cursor_indicator: PieceDragProxy
+var piece_drag_proxy: PieceDragProxy
 var hovered_square: Square
 var current_turn := Piece.ChessColor.WHITE

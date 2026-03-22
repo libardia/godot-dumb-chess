@@ -6,10 +6,11 @@ extends MarginContainer
 
 var held: Piece
 var original_coord: Board.Coord
+var legal_moves: Array[Board.Coord]
 
 
 func _enter_tree() -> void:
-    Globals.cursor_indicator = self
+    Globals.piece_drag_proxy = self
     Globals.square_size_changed.connect(func() -> void:
         size = Globals.square_size
     )
@@ -29,13 +30,33 @@ func _process(_delta: float) -> void:
 
 
 func pick_up(piece: Piece) -> void:
-    original_coord = piece.board_position
-    texture_rect.texture = piece.texture
+    # Piece tracking
     piece.visible = false
     held = piece
+    original_coord = piece.board_position
+
+    # Highlight legal moves
+    legal_moves = MoveLawyer.reachable_coords(piece)
+    for m in legal_moves:
+        Globals.board.square_at_coord(m).highlight_legal.visible = true
+
+    # Proxy image
+    texture_rect.texture = piece.texture
 
 
-func drop() -> void:
-    texture_rect.texture = null
+func drop(coord: Board.Coord) -> void:
+    # Actually move piece
+    if coord != original_coord and coord in legal_moves:
+        Globals.board.move(held.board_position, coord)
+
+    # Piece tracking
     held.visible = true
     held = null
+
+    # Unhighlight legal moves
+    for m in legal_moves:
+        Globals.board.square_at_coord(m).highlight_legal.visible = false
+    legal_moves = []
+
+    # Proxy image
+    texture_rect.texture = null

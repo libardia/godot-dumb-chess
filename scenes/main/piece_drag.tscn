@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b6djhgmph6lda"]
 
-[ext_resource type="Script" uid="uid://ioeiacohxksa" path="res://scenes/main/cursor_follow.gd" id="1_cy6fg"]
+[ext_resource type="Script" uid="uid://ioeiacohxksa" path="res://scenes/main/piece_drag.gd" id="1_cy6fg"]
 
-[node name="CursorFollow" type="MarginContainer" unique_id=1412999318]
+[node name="PieceDrag" type="MarginContainer" unique_id=1412999318]
 z_index = 5
 mouse_filter = 2
 script = ExtResource("1_cy6fg")
