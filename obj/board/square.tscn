@@ -17,6 +17,9 @@ expand_margin_bottom = 2.0
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yey04"]
 bg_color = Color(1, 1, 0, 0.5019608)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o6eoh"]
+bg_color = Color(0.28189474, 0.45086354, 0.7998362, 0.5019608)
+
 [node name="Square" type="MarginContainer" unique_id=436727712]
 custom_minimum_size = Vector2(32, 32)
 anchors_preset = 15
@@ -49,3 +52,11 @@ z_index = 1
 layout_mode = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_yey04")
+
+[node name="HighlightLegal" type="Panel" parent="." unique_id=57625166]
+unique_name_in_owner = true
+visible = false
+z_index = 1
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_o6eoh")

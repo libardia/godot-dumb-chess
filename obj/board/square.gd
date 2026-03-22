@@ -4,9 +4,11 @@ extends Container
 
 @onready var highlight_hover: Panel = %HighlightHover
 @onready var highlight_pressed: Panel = %HighlightPressed
+@onready var highlight_legal: Panel = %HighlightLegal
 
 var coord: Board.Coord
 var board: Board
+## The piece at this square
 var held: Piece
 var _hovered: bool
 var _pressed: bool

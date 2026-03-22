@@ -1,112 +1,167 @@
 extends Node
 
 
+# Directions (in rank-file coords)
+const D_U := Vector2i(1, 0)
+const D_D := Vector2i(-1, 0)
+const D_L := Vector2i(0, -1)
+const D_R := Vector2i(0, 1)
+const D_UL := Vector2i(-1, 1)
+const D_UR := Vector2i(1, 1)
+const D_DL := Vector2i(-1, -1)
+const D_DR := Vector2i(-1, 1)
+const D_ALL: Array[Vector2i] = [
+    D_U, D_D, D_L, D_R,
+    D_UL, D_UR, D_DL, D_DR,
+]
+
+# Knight offsets
+const K_OFF: Array[Vector2i] = [
+    Vector2i(1, 2), Vector2i(1, -2), Vector2i(-1, 2), Vector2i(-1, -2),
+    Vector2i(2, 1), Vector2i(2, -1), Vector2i(-2, 1), Vector2i(-2, -1),
+]
+
+
 func move_is_legal(from: Board.Coord, to: Board.Coord) -> bool:
     var b := Globals.board
     var fsq := b.square_at_coord(from)
     var fp := fsq.held
     var tsq := b.square_at_coord(to)
     var tp := tsq.held
+    var _log_illegal := func(msg: String) -> void:
+        print("%s %s -> %s: %s" % [
+            Piece.Type.keys()[fp.type],
+            Board.Coord.keys()[from],
+            Board.Coord.keys()[to],
+            msg,
+        ])
 
-    # no piece to move
-    if not fp: return false
-    # not that color's turn
-    if fp.color != Globals.current_turn: return false
-    # can't capture own color
-    if fp.color == tp.color: return false
+    if from == to:
+        _log_illegal.call("No move")
+        return false
+    if not fp:
+        _log_illegal.call("No piece to move")
+        return false
+    if fp.color != Globals.current_turn:
+        _log_illegal.call("Not that color's turn")
+        return false
+    if tp and fp.color == tp.color:
+        _log_illegal.call("Can't capture same color")
+        return false
+    if not to in reachable_coords(fp):
+        _log_illegal.call("Not reachable by movement rules")
+        return false
 
     return true
 
 
-func reachable_squares(piece: Piece) -> Array[Square]:
-    var b := Globals.board
+func reachable_coords(piece: Piece) -> Array[Board.Coord]:
+    var board := Globals.board
     var coords: Array[Vector2i]
     match piece.type:
         Piece.Type.KING:
-            coords = _king_reachable_coords(piece)
+            coords = _king_reachable_coords(board, piece)
         Piece.Type.QUEEN:
-            coords = _queen_reachable_coords(piece)
+            coords = _queen_reachable_coords(board, piece)
         Piece.Type.BISHOP:
-            coords = _bishop_reachable_coords(piece)
+            coords = _bishop_reachable_coords(board, piece)
         Piece.Type.KNIGHT:
-            coords = _knight_reachable_coords(piece)
+            coords = _knight_reachable_coords(board, piece)
         Piece.Type.ROOK:
-            coords = _rook_reachable_coords(piece)
+            coords = _rook_reachable_coords(board, piece)
         Piece.Type.PAWN:
-            coords = _pawn_reachable_coords(piece)
-    var squares: Array[Square]
-    for c in coords:
-        if Board.rf_inside_board(c):
-            squares.append(b.square_at_rf(c))
-    return squares
+            coords = _pawn_reachable_coords(board, piece)
+    return coords.map(Board.rf_to_coord)
 
 
-func _king_reachable_coords(piece: Piece) -> Array[Vector2i]:
+func _king_reachable_coords(board: Board, piece: Piece) -> Array[Vector2i]:
     var coords: Array[Vector2i]
-    for dx: int in [-1, 0, 1]:
-        for dy: int in [-1, 0, 1]:
-            if dx != 0 and dy != 0:
-                var d := Vector2i(dx, dy)
-                coords.append(Board.coord_to_rf(piece.board_position) + d)
+    for dir in D_ALL:
+        var npos := Board.coord_to_rf(piece.board_position) + dir
+        if _can_move_or_capture(board, piece, npos):
+            coords.append(npos)
     return coords
 
 
-func _queen_reachable_coords(piece: Piece) -> Array[Vector2i]:
-    var coords := _bishop_reachable_coords(piece)
-    coords.append_array(_rook_reachable_coords(piece))
+func _queen_reachable_coords(board: Board, piece: Piece) -> Array[Vector2i]:
+    var coords := _bishop_reachable_coords(board, piece)
+    coords.append_array(_rook_reachable_coords(board, piece))
     return coords
 
 
-func _bishop_reachable_coords(piece: Piece) -> Array[Vector2i]:
+func _bishop_reachable_coords(board: Board, piece: Piece) -> Array[Vector2i]:
     var coords: Array[Vector2i]
-    var rf := Board.coord_to_rf(piece.board_position)
-    for i in 7:
-        coords.append_array([
-            Vector2i(rf.x + i, rf.y + i),
-            Vector2i(rf.x + i, rf.y - i),
-            Vector2i(rf.x - i, rf.y + i),
-            Vector2i(rf.x - i, rf.y - i),
-        ])
+    var ppos := Board.coord_to_rf(piece.board_position)
+    for dir: Vector2i in [D_UL, D_UR, D_DL, D_DR]:
+        for i in range(1, 8):
+            var npos := ppos + dir * i
+            if _can_move_or_capture(board, piece, npos):
+                coords.append(npos)
+            else:
+                break
     return coords
 
 
-func _knight_reachable_coords(piece: Piece) -> Array[Vector2i]:
+func _knight_reachable_coords(board: Board, piece: Piece) -> Array[Vector2i]:
     var coords: Array[Vector2i]
-    for dx: int in [-2, -1, 1, 2]:
-        var k := 3 - absi(dx)
-        for dy: int in [k, -k]:
-            var d := Vector2i(dx, dy)
-            coords.append(Board.coord_to_rf(piece.board_position) + d)
+    for off in K_OFF:
+        var npos := Board.coord_to_rf(piece.board_position) + off
+        if _can_move_or_capture(board, piece, npos):
+            coords.append(npos)
     return coords
 
 
-func _rook_reachable_coords(piece: Piece) -> Array[Vector2i]:
+func _rook_reachable_coords(board: Board, piece: Piece) -> Array[Vector2i]:
     var coords: Array[Vector2i]
-    var rf := Board.coord_to_rf(piece.board_position)
-    for i in 7:
-        coords.append_array([
-            Vector2i(rf.x + i, rf.y),
-            Vector2i(rf.x - i, rf.y),
-            Vector2i(rf.x, rf.y + i),
-            Vector2i(rf.x, rf.y - i),
-        ])
+    for dir: Vector2i in [D_U, D_D, D_L, D_R]:
+        for i in range(1, 8):
+            var npos := Board.coord_to_rf(piece.board_position) + dir * i
+            if _can_move_or_capture(board, piece, npos):
+                coords.append(npos)
     return coords
 
 
-func _pawn_reachable_coords(piece: Piece) -> Array[Vector2i]:
-    var rf := Board.coord_to_rf(piece.board_position)
-    var c := piece.color
+func _pawn_reachable_coords(board: Board, piece: Piece) -> Array[Vector2i]:
     var coords: Array[Vector2i]
 
-    var color_dir := 1 if c == Piece.ChessColor.WHITE else -1
-    var next_rank := rf.y + color_dir
-    coords = [
-        Vector2i(rf.x + 1, next_rank), # capture to the right
-        Vector2i(rf.x, next_rank), # move forward
-        Vector2i(rf.x - 1, next_rank), # capture to the left
-    ]
-    if not piece.ever_moved:
-        coords.append(
-            Vector2i(rf.x, next_rank + color_dir) # move two forward
+    var rank_dir: int
+    if piece.color == Piece.ChessColor.WHITE:
+        rank_dir = 1
+    else:
+        rank_dir = -1
+
+    var prf := Board.coord_to_rf(piece.board_position)
+    var next_rank := prf.x + rank_dir
+    var pf := prf.y
+
+    var double_advance := Vector2i(next_rank + rank_dir, pf)
+    if (
+        not piece.ever_moved and
+        Board.rf_inside_board(double_advance) and
+        not board.piece_at_rf(double_advance)
+    ):
+        coords.append(double_advance)
+
+    var advance := Vector2i(next_rank, pf)
+    if Board.rf_inside_board(advance) and not board.piece_at_rf(advance):
+        coords.append(advance)
+
+    var capture_left := Vector2i(next_rank, pf - 1)
+    var capture_right := Vector2i(next_rank, pf + 1)
+    for npos: Vector2i in [capture_left, capture_right]:
+        if Board.rf_inside_board(npos):
+            var other_piece := board.piece_at_rf(npos)
+            if other_piece and other_piece.color != piece.color:
+                coords.append(npos)
+
+    return coords
+
+
+func _can_move_or_capture(board: Board, piece: Piece, rf: Vector2i) -> bool:
+    if Board.rf_inside_board(rf):
+        var other_piece := board.piece_at_rf(rf)
+        return (
+            not other_piece or
+            other_piece.color != piece.color
         )
-    return coords
+    return false

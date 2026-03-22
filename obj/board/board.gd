@@ -47,13 +47,12 @@ func reset_board() -> void:
 
 
 func move(from: Coord, to: Coord) -> void:
-    if MoveLawyer.move_is_legal(from, to):
-        var sqf := squares[from]
-        var sqt := squares[to]
-        if sqt.held:
-            sqt.held.free()
-        sqf.held.ever_moved = true
-        sqf.held.reparent(sqt, false)
+    var sqf := squares[from]
+    var sqt := squares[to]
+    if sqt.held:
+        sqt.held.free()
+    sqf.held.ever_moved = true
+    sqf.held.reparent(sqt, false)
 
 
 func square_at_rf(rf: Vector2i) -> Square:
@@ -64,16 +63,25 @@ func square_at_coord(coord: Coord) -> Square:
     return squares[coord]
 
 
+func piece_at_rf(rf: Vector2i) -> Piece:
+    return square_at_rf(rf).held
+
+
+func piece_at_coord(coord: Coord) -> Piece:
+    return square_at_coord(coord).held
+
+
 static func coord_to_rf(coord: Coord) -> Vector2i:
     @warning_ignore("integer_division")
     return Vector2i(
-        (coord % 8) + 1,
         8 - (coord / 8),
+        (coord % 8) + 1,
     )
 
 
 static func rf_to_coord(rf: Vector2i) -> Coord:
-    return (8 * (rf.y - 8) + (rf.x - 1)) as Coord
+    # 8(8-x) + (y-1) => 63 - 8x + y
+    return (63 - 8*rf.x + rf.y) as Coord
 
 
 static func rf_inside_board(rf: Vector2i) -> bool:
