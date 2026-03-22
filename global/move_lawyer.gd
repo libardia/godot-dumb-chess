@@ -98,14 +98,11 @@ func _bishop_reachable_coords(board: Board, piece: Piece) -> Array[Vector2i]:
         for i in range(1, 8):
             var npos := ppos + dir * i
             var result := _move_result(board, piece, npos)
-            if result == MoveResult.NO_MOVE:
+            if result != MoveResult.NO_MOVE:
+                coords.append(npos)
+            if result != MoveResult.MOVE:
                 # Don't consider any farther in this direction
                 break
-            else:
-                coords.append(npos)
-                if result == MoveResult.CAPTURE:
-                    # Don't consider any farther in this direction
-                    break
     return coords
 
 
@@ -124,14 +121,11 @@ func _rook_reachable_coords(board: Board, piece: Piece) -> Array[Vector2i]:
         for i in range(1, 8):
             var npos := Board.coord_to_rf(piece.board_position) + dir * i
             var result := _move_result(board, piece, npos)
-            if result == MoveResult.NO_MOVE:
+            if result != MoveResult.NO_MOVE:
+                coords.append(npos)
+            if result != MoveResult.MOVE:
                 # Don't consider any farther in this direction
                 break
-            else:
-                coords.append(npos)
-                if result == MoveResult.CAPTURE:
-                    # Don't consider any farther in this direction
-                    break
     return coords
 
 
