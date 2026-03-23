@@ -23,36 +23,11 @@ const K_OFF: Array[Vector2i] = [
 
 
 func move_is_legal(from: Board.Coord, to: Board.Coord) -> bool:
-    var b := Globals.board
-    var fsq := b.square_at_coord(from)
-    var fp := fsq.held
-    var tsq := b.square_at_coord(to)
-    var tp := tsq.held
-    var _log_illegal := func(msg: String) -> void:
-        print("%s %s -> %s: %s" % [
-            Piece.Type.keys()[fp.type],
-            Board.Coord.keys()[from],
-            Board.Coord.keys()[to],
-            msg,
-        ])
-
-    if from == to:
-        _log_illegal.call("No move")
-        return false
-    if not fp:
-        _log_illegal.call("No piece to move")
-        return false
-    if fp.color != Globals.current_turn:
-        _log_illegal.call("Not that color's turn")
-        return false
-    if tp and fp.color == tp.color:
-        _log_illegal.call("Can't capture same color")
-        return false
-    if not to in reachable_coords(fp):
-        _log_illegal.call("Not reachable by movement rules")
-        return false
-
-    return true
+    var piece := Globals.board.piece_at_coord(from)
+    if piece:
+        if Globals.current_turn == piece.color:
+            return to in reachable_coords(piece)
+    return false
 
 
 func reachable_coords(piece: Piece) -> Array[Board.Coord]:
