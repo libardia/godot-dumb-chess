@@ -1,14 +1,8 @@
-@tool
 class_name Constants
 
 
-const SCENE_PATHS: Dictionary[String, String] = {
-    "PIECE_RECT": "uid://i315e6bpe0qo",
-}
-
-const PRELOADED_SCENES: Dictionary[String, PackedScene] = {
-    "PIECE_RECT": preload(SCENE_PATHS.PIECE_RECT),
-}
+class Scenes:
+    const PIECE_RECT := preload("uid://i315e6bpe0qo")
 
 # Indexed by [player][kind]
 const PIECE_TEXTURES: Array[Array] = [
