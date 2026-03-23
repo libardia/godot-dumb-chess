@@ -4,14 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://c27y5pk1sjr1p" path="res://obj/board/board.tscn" id="2_6q06x"]
 [ext_resource type="PackedScene" uid="uid://bj2odlx6jk2op" path="res://scenes/main/player_indicator_white.tscn" id="3_k2fmo"]
 
-[sub_resource type="GDScript" id="GDScript_k2fmo"]
-script/source = "extends Control
-
-
-#func _ready() -> void:
-    #var p: BoardPosition = BoardPosition.new()
-"
-
 [sub_resource type="GDScript" id="GDScript_l3cfh"]
 script/source = "extends Button
 
@@ -34,7 +26,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = SubResource("GDScript_k2fmo")
 
 [node name="BoxContainer" type="HBoxContainer" parent="." unique_id=1043255135]
 layout_mode = 1
