@@ -117,17 +117,17 @@ func _pawn_reachable_coords(board: Board, piece: Piece) -> Array[Vector2i]:
     var next_rank := prf.x + rank_dir
     var pf := prf.y
 
-    var double_advance := Vector2i(next_rank + rank_dir, pf)
-    if (
-        not piece.ever_moved and
-        Board.rf_inside_board(double_advance) and
-        not board.piece_at_rf(double_advance)
-    ):
-        coords.append(double_advance)
-
     var advance := Vector2i(next_rank, pf)
     if Board.rf_inside_board(advance) and not board.piece_at_rf(advance):
         coords.append(advance)
+
+    var double_advance := Vector2i(next_rank + rank_dir, pf)
+    if (
+        not piece.ever_moved and
+        not board.piece_at_rf(advance) and
+        not board.piece_at_rf(double_advance)
+    ):
+        coords.append(double_advance)
 
     var capture_left := Vector2i(next_rank, pf - 1)
     var capture_right := Vector2i(next_rank, pf + 1)

@@ -16,9 +16,11 @@ enum Coord {
 
 var _init_setup: Dictionary[Coord, String]
 var squares: Array[Square]
+var board_position: BoardPosition
 
 
 func _enter_tree() -> void:
+    board_position = BoardPosition.new()
     Globals.board = self
 
 
@@ -28,15 +30,16 @@ func _ready() -> void:
     board_squares.mouse_exited.connect(func() -> void:
         Globals.hovered_square = null
     )
+    squares[0].resized.connect(func() -> void:
+        Globals.square_size = squares[0].size
+    )
     for i in squares.size():
         var c := i as Coord
         var sq := squares[i]
         sq.board = self
         if sq.held:
             _init_setup[c] = sq.held.scene_file_path
-    squares[0].resized.connect(func() -> void:
-        Globals.square_size = squares[0].size
-    )
+            board_position.set_coord(c, sq.held.type, sq.held.color)
 
 
 func reset_board() -> void:
