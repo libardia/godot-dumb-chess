@@ -1,7 +1,0 @@
-[gd_scene format=3 uid="uid://cxoblltukhwdw"]
-
-[ext_resource type="PackedScene" uid="uid://i315e6bpe0qo" path="res://obj/pieces/piece.tscn" id="1_a2qu6"]
-[ext_resource type="Texture2D" uid="uid://cxorx7hmqoe1y" path="res://assets/img/wk.svg" id="2_48n6g"]
-
-[node name="PieceWK" unique_id=1394092176 instance=ExtResource("1_a2qu6")]
-texture = ExtResource("2_48n6g")

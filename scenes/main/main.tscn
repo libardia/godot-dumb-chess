@@ -1,11 +1,31 @@
 [gd_scene format=3 uid="uid://dr4psr1xll6yx"]
 
-[ext_resource type="PackedScene" uid="uid://b6djhgmph6lda" path="res://scenes/main/piece_drag.tscn" id="1_6q06x"]
 [ext_resource type="PackedScene" uid="uid://65hjy31oeqrk" path="res://scenes/main/player_indicator_black.tscn" id="1_l3cfh"]
-[ext_resource type="Script" uid="uid://crtuw8x7uh1a0" path="res://scenes/main/test.gd" id="1_ow5a4"]
 [ext_resource type="PackedScene" uid="uid://c27y5pk1sjr1p" path="res://obj/board/board.tscn" id="2_6q06x"]
 [ext_resource type="PackedScene" uid="uid://bj2odlx6jk2op" path="res://scenes/main/player_indicator_white.tscn" id="3_k2fmo"]
-[ext_resource type="Script" uid="uid://it4ldjfv46cd" path="res://scenes/main/reset_button.gd" id="4_l3cfh"]
+
+[sub_resource type="GDScript" id="GDScript_k2fmo"]
+script/source = "extends Control
+
+
+#func _ready() -> void:
+    #var p: BoardPosition = BoardPosition.new()
+"
+
+[sub_resource type="GDScript" id="GDScript_l3cfh"]
+script/source = "extends Button
+
+
+@onready var board: Board = %Board
+
+
+func _ready() -> void:
+    pressed.connect(_on_pressed)
+
+
+func _on_pressed() -> void:
+    board.reset_board()
+"
 
 [node name="Main" type="Control" unique_id=1146456495]
 layout_mode = 3
@@ -14,10 +34,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ow5a4")
-
-[node name="PieceDrag" parent="." unique_id=1412999318 instance=ExtResource("1_6q06x")]
-layout_mode = 0
+script = SubResource("GDScript_k2fmo")
 
 [node name="BoxContainer" type="HBoxContainer" parent="." unique_id=1043255135]
 layout_mode = 1
@@ -62,4 +79,4 @@ theme_override_constants/margin_bottom = 50
 [node name="Button" type="Button" parent="BoxContainer/RightPanel" unique_id=204586973]
 layout_mode = 2
 text = "Reset"
-script = ExtResource("4_l3cfh")
+script = SubResource("GDScript_l3cfh")

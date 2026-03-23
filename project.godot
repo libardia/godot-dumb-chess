@@ -22,8 +22,7 @@ config/icon="uid://cxorx7hmqoe1y"
 [autoload]
 
 InputDetector="*uid://c2qsh6370ql0"
-Globals="*uid://u3acj5570m6u"
-MoveLawyer="*uid://x6lo6own0vyu"
+Chess="*uid://cna5846e1mqpf"
 
 [debug]
 
