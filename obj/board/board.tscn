@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://c27y5pk1sjr1p"]
 
+[ext_resource type="Script" uid="uid://dg7jql5un57ad" path="res://obj/board/board.gd" id="1_0qu5k"]
 [ext_resource type="Theme" uid="uid://bjt5v0dg3fquw" path="res://ui/general.tres" id="2_0qu5k"]
 [ext_resource type="PackedScene" uid="uid://dbgyy8ts881a4" path="res://obj/board/square_w.tscn" id="3_0qu5k"]
 [ext_resource type="PackedScene" uid="uid://cd0nvodk3gk3f" path="res://obj/board/square_b.tscn" id="4_uhixl"]
@@ -15,6 +16,7 @@ offset_left = 252.0
 offset_right = -252.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_0qu5k")
 
 [node name="GridContainer" type="GridContainer" parent="." unique_id=732882170]
 layout_mode = 2
